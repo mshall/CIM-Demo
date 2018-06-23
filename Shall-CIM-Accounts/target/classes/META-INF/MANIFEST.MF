@@ -1,0 +1,11 @@
+Manifest-Version: 1.0
+Implementation-Title: Shall-CIM-Accounts
+Implementation-Version: 1.0-SNAPSHOT
+Built-By: Shall
+Implementation-Vendor-Id: com.shall.cim.accounts
+Build-Jdk: 1.8.0_171
+Implementation-URL: http://projects.spring.io/spring-boot/Shall-CIM-Ac
+ counts/
+Created-By: Maven Integration for Eclipse
+Implementation-Vendor: Pivotal Software, Inc.
+

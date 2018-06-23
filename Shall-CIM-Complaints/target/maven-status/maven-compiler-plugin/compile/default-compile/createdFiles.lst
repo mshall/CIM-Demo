@@ -1,0 +1,14 @@
+com\shall\customercomplaints\repository\CustomerRepository.class
+com\shall\customercomplaints\service\ComplaintService.class
+com\shall\common\core\exception\ValidationException.class
+com\shall\customercomplaints\model\Complaint.class
+com\shall\customercomplaints\service\GenericService.class
+com\shall\common\core\exception\GeneralExceptionHandler.class
+com\shall\common\core\exception\GenericServiceException.class
+com\shall\customercomplaints\controller\ComplaintController.class
+com\shall\common\core\exception\BusinessException.class
+com\shall\common\core\exception\ErrorResponse.class
+com\shall\customercomplaints\ComplaintApp.class
+com\shall\common\core\config\JacksonConfig.class
+com\shall\common\core\exception\ExtendedErrorResponse.class
+com\shall\customercomplaints\network\response\ResponseVO.class
