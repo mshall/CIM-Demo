@@ -8,8 +8,9 @@
 # Repository content
 
 - Accounts microervice (**Shall-CIM-Accounts**).
-- Complaints microservice(**Shall-CIM-Complaints**).
-- Complaints JSF frontend (**shall-cim-jsf**).
+- Complaints microservice(**Shall-CIM-Complaints**)
+- Complaints JSF frontend (**shall-cim-jsf**)
+- Angular5 Customers module frontend (**To be added**).
 - CIMCommons utility dependency (**To be added**)
 - ULFF logger utility dependency (**To be added**)
 - README.md file
