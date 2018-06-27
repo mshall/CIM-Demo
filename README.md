@@ -36,6 +36,7 @@
 - Make navigation to the **JSF project** in the **Angular5** project
 - Addd another microservice: (**Spring-Config**) that will hold all of the configurations used by **Complaints** & **Customers** microservices in a centralized place
  - Add common jar between that contains the common classes and methods that are being used in both microservices
+ - Enhance APIs logic.
  - Add methods documentation
  - Add swagger for API documentation
  - Apply AOP for logging with integrating with Kafka in a **ULFF**
