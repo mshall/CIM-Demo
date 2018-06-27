@@ -1,4 +1,4 @@
-com\shall\customercomplaints\repository\CustomerRepository.class
+com\shall\customercomplaints\repository\ComplaintsRepository.class
 com\shall\customercomplaints\service\ComplaintService.class
 com\shall\common\core\exception\ValidationException.class
 com\shall\customercomplaints\model\Complaint.class

@@ -1,25 +1,21 @@
 package com.shall.customeraccount.service;
 
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.data.domain.PageRequest;
 import org.springframework.data.repository.CrudRepository;
 import org.springframework.stereotype.Service;
-
 import com.shall.customeraccount.model.Customer;
 import com.shall.customeraccount.repository.CustomerRepository;
-
-import java.util.List;
 
 @Service
 public class CustomerServiceImpl implements GenericService<Customer, Long> {
 
 	@Autowired
-	private CustomerRepository CustomerRepository;
+	private CustomerRepository customerRepository;
 
 	@Override
 	public CrudRepository<Customer, Long> getRepository() {
 		// TODO Auto-generated method stub
-		return CustomerRepository;
+		return customerRepository;
 	}
 
 	@Override
@@ -30,6 +26,10 @@ public class CustomerServiceImpl implements GenericService<Customer, Long> {
 	@Override
 	public Customer save(Customer entity) {
 		return GenericService.super.save(entity);
+	}
+
+	public Customer findByCustomerEmail(String email) {
+		return customerRepository.findByEmail(email);
 	}
 
 	/*

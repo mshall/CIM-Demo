@@ -1,15 +1,18 @@
 ﻿# CIM-Demo
 
-This repo is to apply the microservices architecture with different technologies used.
+- This repo is to apply the microservices architecture with different technologies used.
+- There are 2 modules (**Customers & Complaints**)
+- These modules resemble the relation between the customer and the normal operations to be done on & the complaints that the customer open.
 
 
 # Repository content
 
-- Accounts microervice.
-- Complaints microservice.
-- CIMCommons utility dependency
-- ULFF logger utility dependency
-- READ.me file
+- Accounts microervice (**Shall-CIM-Accounts**).
+- Complaints microservice(**Shall-CIM-Complaints**).
+- Complaints JSF frontend (**shall-cim-jsf**).
+- CIMCommons utility dependency (**To be added**)
+- ULFF logger utility dependency (**To be added**)
+- README.md file
 
 
 ## Technologies used
@@ -21,6 +24,22 @@ This repo is to apply the microservices architecture with different technologies
 - RESTful Jackson
 - Spring-Kafka integration
 
+## RESTful APIs collection:
+
+[Postman collection](https://www.getpostman.com/collections/b9930f203975d983b7ed)
+
+## Missing enhancements
+
+- Develop the **Angular5** user module
+- Make navigation to the **Angular5** project in the **JSF project**
+- Make navigation to the **JSF project** in the **Angular5** project
+- Addd another microservice: (**Spring-Config**) that will hold all of the configurations used by **Complaints** & **Customers** microservices in a centralized place
+ - Add common jar between that contains the common classes and methods that are being used in both microservices
+ - Add methods documentation
+ - Add swagger for API documentation
+ - Apply AOP for logging with integrating with Kafka in a **ULFF**
+ - Apply the reactive programming concept regarding the communications between different microservices.
+ 
 
 ## Notes
 
@@ -28,30 +47,4 @@ This repo is to apply the microservices architecture with different technologies
 - Contact me: (mohamed.s.elshall2011@gmail.com)
 
 
-## Rename a file
 
-You can rename the current file by clicking the file name in the navigation bar or by clicking the **Rename** button in the file explorer.
-
-## Delete a file
-
-You can delete the current file by clicking the **Remove** button in the file explorer. The file will be moved into the **Trash** folder and automatically deleted after 7 days of inactivity.
-
-## Export a file
-
-You can export the current file by clicking **Export to disk** in the menu. You can choose to export the file as plain Markdown, as HTML using a Handlebars template or as a PDF.
-
-## UML diagrams
-
-```mermaid
-sequenceDiagram
-Customer support agent ->> Accounts: get all customers?
-Accounts -> Customer support agent: all customers data returned
-
-Customer support agent ->> Accounts: get specific customer information?
-Accounts -> Customer support agent: specific customer data returned
-
-
-
-Customer support agent ->>Complaint: get all complaints?
-Complaints-> Customer support agent: all customers data returned
-```

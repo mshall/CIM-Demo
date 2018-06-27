@@ -6,7 +6,7 @@ import org.springframework.data.repository.CrudRepository;
 import org.springframework.stereotype.Service;
 
 import com.shall.customercomplaints.model.Complaint;
-import com.shall.customercomplaints.repository.CustomerRepository;
+import com.shall.customercomplaints.repository.ComplaintsRepository;
 
 import java.util.List;
 
@@ -14,12 +14,12 @@ import java.util.List;
 public class ComplaintService implements GenericService<Complaint, Long> {
 
 	@Autowired
-	private CustomerRepository CustomerRepository;
+	private ComplaintsRepository complaintsRepository;
 
 	@Override
 	public CrudRepository<Complaint, Long> getRepository() {
 		// TODO Auto-generated method stub
-		return CustomerRepository;
+		return complaintsRepository;
 	}
 
 	@Override
@@ -30,6 +30,10 @@ public class ComplaintService implements GenericService<Complaint, Long> {
 	@Override
 	public Complaint save(Complaint entity) {
 		return GenericService.super.save(entity);
+	}
+
+	public List<Complaint> findByCustomerEmail(String email) {
+		return complaintsRepository.findByCustomerEmail(email);
 	}
 
 	/*
