@@ -1,0 +1,159 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:p="http://primefaces.org/ui">
+<h:body>
+	<ui:composition template="/WEB-INF/tags/layout.xhtml">
+		<ui:define name="content">
+
+			<h:form id="form1">
+				<p:growl id="messages" showDetail="true" life="3000" />
+				<p:dataTable id="objects" var="object" value="#{itemMB.list}"
+					styleClass="et_datatable" emptyMessage="Empty..." editable="true"
+					paginator="true" rows="10"
+					paginatorTemplate="{CurrentPageReport}  {FirstPageLink} {PreviousPageLink} {PageLinks} {NextPageLink} {LastPageLink} {RowsPerPageDropdown}"
+					rowsPerPageTemplate="5,10,15" selectionMode="single"
+					rowKey="#{object.complaintId}"
+					filteredValue="#{itemMB.listSelected}">
+
+					<p:column headerText="Id" sortBy="#{object.complaintId}"
+						filterBy="#{object.complaintId}" filterMatchMode="contains">
+						<h:outputText value="#{object.complaintId}" />
+					</p:column>
+
+					<p:column headerText="Comments" sortBy="#{object.comments}"
+						filterBy="#{object.comments}" filterMatchMode="contains">
+						<h:outputText value="#{object.comments}" />
+					</p:column>
+
+					<p:column headerText="User Email" sortBy="#{object.customerEmail}"
+						filterBy="#{object.customerEmail}" filterMatchMode="contains">
+						<h:outputText value="#{object.customerEmail}" />
+					</p:column>
+
+
+					<p:column headerText="Still open?" sortBy="#{object.open}"
+						filterBy="#{object.open}" filterMatchMode="contains">
+						<h:outputText value="#{object.open}" />
+					</p:column>
+
+					<p:column headerText="Opening time"
+						sortBy="#{object.complaintOpeningTime}"
+						filterBy="#{object.complaintOpeningTime}"
+						filterMatchMode="contains">
+						<h:outputText value="#{object.complaintOpeningTime}" />
+					</p:column>
+
+					<p:column headerText="Closing time"
+						sortBy="#{object.complaintClosingTime}"
+						filterBy="#{object.complaintClosingTime}"
+						filterMatchMode="contains">
+						<h:outputText value="#{object.complaintClosingTime}" />
+					</p:column>
+					<p:column headerText="Delete" style="width:8%">
+						<p:commandLink update=":form1:display"
+							oncomplete="PF('confirmDeleteDlg').show()"
+							image="ui-icon ui-icon-close" title="Delete">
+							<f:setPropertyActionListener value="#{object}"
+								target="#{itemMB.beanSelected}" />
+							<h:outputText styleClass="ui-icon ui-icon-close" />
+						</p:commandLink>
+					</p:column>
+
+					<p:column headerText="Details" style="width:8%">
+						<p:commandLink update=":form1:display"
+							oncomplete="PF('detailsDlg').show()"
+							image="ui-icon ui-icon-search" title="Details">
+							<f:setPropertyActionListener value="#{object}"
+								target="#{itemMB.beanSelected}" />
+							<h:outputText styleClass="ui-icon ui-icon-search" />
+						</p:commandLink>
+					</p:column>
+
+
+				</p:dataTable>
+
+
+				<p:dialog header="Remove" widgetVar="confirmDeleteDlg"
+					resizable="false" width="400" height="60" showEffect="clip"
+					hideEffect="clip" modal="true">
+
+					<p:outputPanel layout="block" style="text-align:center">
+						<p:commandButton value="Yes"
+							update=":form1:messages,:form1:objects"
+							actionListener="#{itemMB.delete}"
+							oncomplete="PF('confirmDeleteDlg').hide()" />
+						<p:commandButton value="No"
+							onclick="PF('confirmDeleteDlg').hide()" type="button" />
+					</p:outputPanel>
+
+				</p:dialog>
+
+
+
+				<p:dialog header="Update" widgetVar="detailsDlg" resizable="false"
+					width="750" height="400" showEffect="clip" hideEffect="clip"
+					modal="true">
+
+					<h:panelGrid id="display" columns="2" cellpadding="4"
+						style="margin:0 auto;">
+
+						<h:outputText value="Complaint Id"
+							style="padding-left: 30px; padding-right: 30px;" />
+
+						<p:inputText value="#{itemMB.beanSelected.complaintId}" />
+
+
+
+						<h:outputText value="Complaint comments"
+							style="padding-left: 30px; padding-right: 30px;" />
+
+						<p:inputText value="#{itemMB.beanSelected.comments}" />
+
+
+
+						<h:outputText value="Complaint reporter"
+							style="padding-left: 30px; padding-right: 30px;" />
+						<p:inputText value="#{itemMB.beanSelected.customerEmail}" />
+
+
+						<h:outputText value="Is open"
+							style="padding-left: 30px; padding-right: 30px;" />
+						<p:inputText value="#{itemMB.beanSelected.open}" />
+
+
+						<h:outputText value="Opening date"
+							style="padding-left: 30px; padding-right: 30px;" />
+						<p:inputText value="#{itemMB.beanSelected.complaintOpeningTime}" />
+
+						<h:outputText value="Closing date"
+							style="padding-left: 30px; padding-right: 30px;" />
+						<p:inputText value="#{itemMB.beanSelected.complaintClosingTime}" />
+
+					</h:panelGrid>
+
+					<p:outputPanel layout="block" style="text-align:center">
+						<br />
+						<br />
+						<p:commandButton value="Update"
+							update=":form1:objects, :form1:messages"
+							actionListener="#{itemMB.update}"
+							oncomplete="PF('detailsDlg').hide()" />
+						<p:commandButton value="Cancel" onclick="PF('detailsDlg').hide()"
+							type="button" />
+					</p:outputPanel>
+
+				</p:dialog>
+
+
+
+			</h:form>
+
+		</ui:define>
+	</ui:composition>
+</h:body>
+</html>

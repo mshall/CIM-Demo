@@ -6,10 +6,12 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.shall.customercomplaints.model.Complaint;
 import com.shall.customercomplaints.network.response.ResponseVO;
+import com.shall.customercomplaints.service.ComplaintService;
 import com.shall.customercomplaints.service.GenericService;
 
 @RestController
@@ -19,14 +21,20 @@ public class ComplaintController {
 	@Autowired
 	private GenericService<Complaint, Long> service;
 
-	@RequestMapping(value = "/", produces = "application/json; charset=UTF-8", method = RequestMethod.GET)
+	@RequestMapping(value = "/all", produces = "application/json; charset=UTF-8", method = RequestMethod.GET)
 	public ResponseEntity<ResponseVO<Iterable<Complaint>>> getAllCustomerAccounts() {
 		return ResponseEntity.ok(new ResponseVO<>(service.findAll()));
 	}
 
 	@RequestMapping(value = "/{complaint-id}", produces = "application/json; charset=UTF-8", method = RequestMethod.GET)
-	public ResponseEntity<ResponseVO<Complaint>> findCustomerById(@PathVariable("complaint-id") String complaintId) {
+	public ResponseEntity<ResponseVO<Complaint>> findComplaintById(@PathVariable("complaint-id") String complaintId) {
 		return ResponseEntity.ok(new ResponseVO<>(service.find(Long.parseLong(complaintId))));
+	}
+
+	@RequestMapping(value = "/", produces = "application/json; charset=UTF-8", method = RequestMethod.GET)
+	public ResponseEntity<ResponseVO<Iterable<Complaint>>> findComplaintByCustomerEmail(
+			@RequestParam("email") String email) {
+		return ResponseEntity.ok(new ResponseVO<>(((ComplaintService) service).findByCustomerEmail(email)));
 	}
 
 	@RequestMapping(value = "/", produces = "application/json; charset=UTF-8", method = RequestMethod.POST)
@@ -34,16 +42,14 @@ public class ComplaintController {
 		return ResponseEntity.ok(new ResponseVO<>(service.save(complaint)));
 	}
 
-	@RequestMapping(value = "/{complaint-id}", produces = "application/json; charset=UTF-8", method = RequestMethod.PATCH)
-	public ResponseEntity<ResponseVO<Complaint>> updateCustomer(@PathVariable("complaint-id") Long complaintId,
-			@RequestBody Complaint complaint) {
-		complaint.setComplaintId(complaintId);
+	@RequestMapping(value = "/", produces = "application/json; charset=UTF-8", method = RequestMethod.PATCH)
+	public ResponseEntity<ResponseVO<Complaint>> updateComplaint(@RequestBody Complaint complaint) {
 		return ResponseEntity.ok(new ResponseVO<>(service.update(complaint)));
 	}
 
-	@RequestMapping(value = "/{customer-id}", produces = "application/json; charset=UTF-8", method = RequestMethod.DELETE)
-	public ResponseEntity<ResponseVO<Boolean>> deleteCustomer(@PathVariable("customer-id") Long customerId) {
-		return ResponseEntity.ok(new ResponseVO<>(service.delete(customerId)));
+	@RequestMapping(value = "/{complaint-id}", produces = "application/json; charset=UTF-8", method = RequestMethod.DELETE)
+	public ResponseEntity<ResponseVO<Boolean>> deleteComplaint(@PathVariable("complaint-id") Long complaintId) {
+		return ResponseEntity.ok(new ResponseVO<>(service.delete(complaintId)));
 	}
 
 }
