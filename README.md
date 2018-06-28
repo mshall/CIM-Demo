@@ -41,7 +41,8 @@
  - Add swagger for API documentation
  - Apply AOP for logging with integrating with Kafka in a **ULFF**
  - Apply the reactive programming concept regarding the communications between different microservices.
- 
+ - Dockerize the microservices.
+ - Add Kubernetes over the docker containers for the management
 
 ## Notes
 
