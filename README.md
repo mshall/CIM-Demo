@@ -36,7 +36,7 @@
 
 ## Screenshot of result:
 
-![enter image description here](https://picasaweb.google.com/115919670543409421172/6572865152440360225#6572865152467409266)
+![Screenshot of the result](https://github.com/mshall/CIM-Demo/blob/master/Screenshot.JPG)
 
 
 ## How to run:
