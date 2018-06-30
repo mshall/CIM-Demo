@@ -66,11 +66,13 @@
 
 - Addd another microservice: (**Spring-Config**) that will hold all of the configurations used by **Complaints** & **Customers** microservices in a centralized place
  - Add common jar between that contains the common classes and methods that are being used in both microservices
+ - Enhance APIs logic.
  - Add methods documentation
  - Add swagger for API documentation
  - Apply AOP for logging with integrating with Kafka in a **ULFF**
  - Apply the reactive programming concept regarding the communications between different microservices.
- 
+ - Dockerize the microservices.
+ - Add Kubernetes over the docker containers for the management
 
 ## Notes
 
