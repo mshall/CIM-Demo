@@ -3,6 +3,7 @@ D:\Mohamed\fcih\work\Tech vista\Interview\Task\CIM-Demo\Shall-CIM-Accounts\src\m
 D:\Mohamed\fcih\work\Tech vista\Interview\Task\CIM-Demo\Shall-CIM-Accounts\src\main\java\com\shall\customeraccount\controller\CustomerController.java
 D:\Mohamed\fcih\work\Tech vista\Interview\Task\CIM-Demo\Shall-CIM-Accounts\src\main\java\com\shall\common\core\exception\GenericServiceException.java
 D:\Mohamed\fcih\work\Tech vista\Interview\Task\CIM-Demo\Shall-CIM-Accounts\src\main\java\com\shall\common\core\exception\GeneralExceptionHandler.java
+D:\Mohamed\fcih\work\Tech vista\Interview\Task\CIM-Demo\Shall-CIM-Accounts\src\main\java\com\shall\customeraccount\config\MyConfiguration.java
 D:\Mohamed\fcih\work\Tech vista\Interview\Task\CIM-Demo\Shall-CIM-Accounts\src\main\java\com\shall\common\core\exception\ValidationException.java
 D:\Mohamed\fcih\work\Tech vista\Interview\Task\CIM-Demo\Shall-CIM-Accounts\src\main\java\com\shall\customeraccount\network\response\ResponseVO.java
 D:\Mohamed\fcih\work\Tech vista\Interview\Task\CIM-Demo\Shall-CIM-Accounts\src\main\java\com\shall\customeraccount\service\CustomerServiceImpl.java

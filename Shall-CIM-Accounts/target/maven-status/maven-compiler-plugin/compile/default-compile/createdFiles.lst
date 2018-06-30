@@ -1,4 +1,5 @@
 com\shall\common\core\exception\ValidationException.class
+com\shall\customeraccount\config\MyConfiguration$1.class
 com\shall\customeraccount\service\GenericService.class
 com\shall\customeraccount\model\Customer.class
 com\shall\common\core\exception\GeneralExceptionHandler.class
@@ -10,4 +11,6 @@ com\shall\customeraccount\repository\CustomerRepository.class
 com\shall\common\core\exception\BusinessException.class
 com\shall\common\core\exception\ErrorResponse.class
 com\shall\common\core\exception\ExtendedErrorResponse.class
+com\shall\customeraccount\AccountsApp$1.class
+com\shall\customeraccount\config\MyConfiguration.class
 com\shall\customeraccount\network\response\ResponseVO.class
