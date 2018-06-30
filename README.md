@@ -8,9 +8,9 @@
 # Repository content
 
 - Accounts microervice (**Shall-CIM-Accounts**).
-- Complaints microservice(**Shall-CIM-Complaints**)
-- Complaints JSF frontend (**shall-cim-jsf**)
-- Angular5 Customers module frontend (**To be added**).
+- Complaints microservice(**Shall-CIM-Complaints**).
+- Complaints JSF frontend (**shall-cim-jsf**).
+- Cutomers Angular 6 frontend (**Shall-CIM-Angular**)
 - CIMCommons utility dependency (**To be added**)
 - ULFF logger utility dependency (**To be added**)
 - README.md file
@@ -24,16 +24,46 @@
 - H2 in memory database
 - RESTful Jackson
 - Spring-Kafka integration
+- Angular 6
+- RxJS 6
+- jQuery
+- Bootstrap
+- 
 
 ## RESTful APIs collection:
 
 [Postman collection](https://www.getpostman.com/collections/b9930f203975d983b7ed)
 
+## Screenshot of result:
+
+![enter image description here](https://picasaweb.google.com/115919670543409421172/6572865152440360225#6572865152467409266)
+
+
+## How to run:
+
+- Before running:
+	-  **Accounts/Customers** microservice runs on port: 8081
+	- **Complaints** microservice runs on port: **8082**
+	- **JSF** project runs on port: **8080**
+	- **Angular** project runs on port: **4200**
+	- Final result page: Run it through the file system after everything is up with the name **main.html**
+
+- for the Accounts , Complaints microservices & JSF project, run the following command 
+
+> `mvn clean install package`
+
+- Run the generated Jar files generated in target folders for the Accounts & Complaints microservice through the following commands:
+
+> `java -jar 'Microservice_Name`
+
+- Run the JSF project through deploying the war file on any server or within the Eclipse IDE
+
+- Run the Angular project through the following command:
+> `ng serve --open`
+
+
 ## Missing enhancements
 
-- Develop the **Angular5** user module
-- Make navigation to the **Angular5** project in the **JSF project**
-- Make navigation to the **JSF project** in the **Angular5** project
 - Addd another microservice: (**Spring-Config**) that will hold all of the configurations used by **Complaints** & **Customers** microservices in a centralized place
  - Add common jar between that contains the common classes and methods that are being used in both microservices
  - Enhance APIs logic.
